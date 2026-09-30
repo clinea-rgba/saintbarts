@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="robots" content="noindex, nofollow, noarchive, nositelinkssearchbox">
   <title>Saint Barth 2027</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -424,6 +425,196 @@
       opacity: 0.6;
     }
 
+
+    /* ─── LODGING SECTION ───────────────────── */
+
+    .lodging-outer-header {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 18px;
+      background: rgba(200,169,106,0.06);
+      border: 1px solid var(--gold-dim);
+      border-radius: 2px;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0;
+      -webkit-tap-highlight-color: transparent;
+      transition: background 0.2s;
+    }
+
+    .lodging-outer-header:hover,
+    .lodging-outer-header:active {
+      background: rgba(200,169,106,0.10);
+    }
+
+    .lodging-outer-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease;
+    }
+
+    .lodging-outer-body.open {
+      max-height: 5000px;
+    }
+
+    .lodging-outer-header .lodging-chevron {
+      transition: transform 0.35s ease;
+    }
+
+    .lodging-outer-header.open .lodging-chevron {
+      transform: rotate(180deg);
+    }
+
+    .lodging-section {
+      padding: 44px 32px 40px;
+      background: var(--midnight);
+    }
+
+    .lodging-title-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .lodging-new-badge {
+      display: inline-flex;
+      align-items: center;
+      background: var(--rose);
+      color: #FAFAF8;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: 0.28em;
+      padding: 4px 10px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      animation: newpulse 2s ease-in-out infinite;
+      flex-shrink: 0;
+    }
+
+    @keyframes newpulse {
+      0%,100% { box-shadow: 0 0 0 0 rgba(196,137,154,0.5); }
+      50%      { box-shadow: 0 0 0 7px rgba(196,137,154,0); }
+    }
+
+    .lodging-intro {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--dim);
+      line-height: 1.8;
+      margin-bottom: 28px;
+    }
+
+    .lodging-accordion {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border: 1px solid var(--gold-dim);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .lodging-card {
+      border-bottom: 1px solid var(--gold-dim);
+    }
+
+    .lodging-card:last-child { border-bottom: none; }
+
+    .lodging-card-header {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 18px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      text-align: left;
+      gap: 12px;
+      -webkit-tap-highlight-color: transparent;
+      transition: background 0.2s;
+    }
+
+    .lodging-card-header:hover,
+    .lodging-card-header:active {
+      background: rgba(200,169,106,0.05);
+    }
+
+    .lodging-card-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 19px;
+      font-weight: 400;
+      color: var(--linen);
+      line-height: 1.2;
+    }
+
+    .lodging-chevron {
+      flex-shrink: 0;
+      transition: transform 0.35s ease;
+    }
+
+    .lodging-card.open .lodging-chevron {
+      transform: rotate(180deg);
+    }
+
+    .lodging-card-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.45s ease, padding 0.3s ease;
+      padding: 0 18px;
+    }
+
+    .lodging-card.open .lodging-card-body {
+      max-height: 500px;
+      padding: 4px 18px 20px;
+    }
+
+    .lodging-comment {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 16px;
+      font-style: italic;
+      color: var(--linen);
+      margin-bottom: 14px;
+      line-height: 1.5;
+    }
+
+    .lodging-detail {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 7px 0;
+      border-bottom: 1px solid rgba(200,169,106,0.07);
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--dim);
+    }
+
+    .lodging-detail:last-child { border-bottom: none; }
+
+    .lodging-detail a {
+      color: var(--rose);
+      text-decoration: none;
+    }
+
+    .lodging-detail a:hover { text-decoration: underline; }
+
+    .lodging-price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--gold);
+    }
+
+    .lodging-detail svg { flex-shrink: 0; opacity: 0.75; }
+
     @media (prefers-reduced-motion: reduce) {
       .fade-up { opacity:1; transform:none; transition:none; }
       .horizon-line { transition:none; }
@@ -458,6 +649,182 @@
     <div class="scroll-tick"></div>
   </div>
 </section>
+
+
+<!-- ══════════════════════════════════════
+     AFFORDABLE LODGING
+══════════════════════════════════════ -->
+<section class="lodging-section">
+  <p class="section-label" style="margin-bottom:16px;">Affordable Lodging</p>
+  <p class="lodging-intro">Hand-picked hotels under €500/night. Call directly for room options, discounts, and availability — many will bundle a rental car. Book early to hold your spot; most allow free cancellation.</p>
+
+  <button class="lodging-outer-header" id="lodgingToggle" onclick="toggleLodgingAll()">
+    <span style="display:flex;align-items:center;gap:10px;"><span class="lodging-new-badge" id="newBadge">New</span>View 10 Lodging Options</span>
+    <svg class="lodging-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 5l4 4 4-4" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+  <div class="lodging-outer-body" id="lodgingOuterBody">
+  <div class="lodging-accordion">
+
+      <div class="lodging-card" id="lcard0">
+        <button class="lodging-card-header" onclick="toggleLodging(0)">
+          <span class="lodging-card-name">Les Ilets de la Plage</span>
+          <svg class="lodging-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 5l4 4 4-4" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="lodging-card-body">
+          <p class="lodging-comment">Beautiful, great location</p>
+          <div class="lodging-detail"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 1.5h5l6 6-5 5-6-6v-5z" stroke="var(--gold)" stroke-width="1.2" fill="none" stroke-linejoin="round"/><circle cx="4.5" cy="4.5" r="1" fill="var(--gold)"/></svg><span class="lodging-price">€430/night</span></div>
+          <div class="lodging-detail"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 1.5h2.8l1.2 3-1.8 1.1a8.3 8.3 0 003.7 3.7L9.5 7.7l3 1.2v2.8a1.2 1.2 0 01-1.3 1.2C4.3 12.4 1 6.8 1.5 2.8c.1-.7.7-1.3 1-1.3z" stroke="var(--gold)" stroke-width="1.2" stroke-linejoin="round" fill="none"/></svg><a href="tel:+590590278857">+590 590 27 88 57</a></div>
+          <div class="lodging-detail"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="7" cy="7" r="5.5" stroke="var(--gold)" stroke-width="1.2"/><ellipse cx="7" cy="7" rx="2.5" ry="5.5" stroke="var(--gold)" stroke-width="1"/><line x1="1.5" y1="7" x2="12.5" y2="7" stroke="var(--gold)" stroke-width="1"/><line x1="2" y1="4.5" x2="12" y2="4.5" stroke="var(--gold)" stroke-width="0.8"/><line x1="2" y1="9.5" x2="12" y2="9.5" stroke="var(--gold)" stroke-width="0.8"/></svg><a href="https://lesilets.com" target="_blank" rel="noopener">lesilets.com</a></div>
+          <div class="lodging-detail"><svg width="12" height="15" viewBox="0 0 12 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 1C3.2 1 1 3.2 1 6c0 4 5 8 5 8s5-4 5-8c0-2.8-2.2-5-5-5z" stroke="var(--gold)" stroke-width="1.2" fill="none"/><circle cx="6" cy="6" r="2" stroke="var(--gold)" stroke-width="1.2" fill="none"/></svg><a href="https://maps.app.goo.gl/xJpdbcXPx2vq6XLQ6" target="_blank" rel="noopener">View on map</a></div>
+        </div>
+      </div>
+      <div class="lodging-card" id="lcard1">
+        <button class="lodging-card-header" onclick="toggleLodging(1)">
+          <span class="lodging-card-name">Pearl Beach Hotel</span>
+          <svg class="lodging-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 5l4 4 4-4" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="lodging-card-body">
+          <p class="lodging-comment">Beautiful, great location with a lovely beach bar</p>
+          <div class="lodging-detail"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 1.5h5l6 6-5 5-6-6v-5z" stroke="var(--gold)" stroke-width="1.2" fill="none" stroke-linejoin="round"/><circle cx="4.5" cy="4.5" r="1" fill="var(--gold)"/></svg><span class="lodging-price">€380/night</span></div>
+          <div class="lodging-detail"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 1.5h2.8l1.2 3-1.8 1.1a8.3 8.3 0 003.7 3.7L9.5 7.7l3 1.2v2.8a1.2 1.2 0 01-1.3 1.2C4.3 12.4 1 6.8 1.5 2.8c.1-.7.7-1.3 1-1.3z" stroke="var(--gold)" stroke-width="1.2" stroke-linejoin="round" fill="none"/></svg><a href="tel:+590590528120">+590 590 52 81 20</a></div>
+          <div class="lodging-detail"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="7" cy="7" r="5.5" stroke="var(--gold)" stroke-width="1.2"/><ellipse cx="7" cy="7" rx="2.5" ry="5.5" stroke="var(--gold)" stroke-width="1"/><line x1="1.5" y1="7" x2="12.5" y2="7" stroke="var(--gold)" stroke-width="1"/><line x1="2" y1="4.5" x2="12" y2="4.5" stroke="var(--gold)" stroke-width="0.8"/><line x1="2" y1="9.5" x2="12" y2="9.5" stroke="var(--gold)" stroke-width="0.8"/></svg><a href="https://www.access.sb/en/st-barts/hotels/4-star-hotel/pearl-beach-hotel/" target="_blank" rel="noopener">access.sb</a></div>
+          <div class="lodging-detail"><svg width="12" height="15" viewBox="0 0 12 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 1C3.2 1 1 3.2 1 6c0 4 5 8 5 8s5-4 5-8c0-2.8-2.2-5-5-5z" stroke="var(--gold)" stroke-width="1.2" fill="none"/><circle cx="6" cy="6" r="2" stroke="var(--gold)" stroke-width="1.2" fill="none"/></svg><a href="https://maps.app.goo.gl/mDVqyeYE6G4wsxFr7" target="_blank" rel="noopener">View on map</a></div>
+        </div>
+      </div>
+      <div class="lodging-card" id="lcard2">
+        <button class="lodging-card-header" onclick="toggleLodging(2)">
+          <span class="lodging-card-name">Hotel Le Village</span>
+          <svg class="lodging-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 5l4 4 4-4" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="lodging-card-body">
+          <p class="lodging-comment">Nice and centrally located</p>
+          <div class="lodging-detail"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 1.5h5l6 6-5 5-6-6v-5z" stroke="var(--gold)" stroke-width="1.2" fill="none" stroke-linejoin="round"/><circle cx="4.5" cy="4.5" r="1" fill="var(--gold)"/></svg><span class="lodging-price">€230/night</span></div>
+          <div class="lodging-detail"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 1.5h2.8l1.2 3-1.8 1.1a8.3 8.3 0 003.7 3.7L9.5 7.7l3 1.2v2.8a1.2 1.2 0 01-1.3 1.2C4.3 12.4 1 6.8 1.5 2.8c.1-.7.7-1.3 1-1.3z" stroke="var(--gold)" stroke-width="1.2" stroke-linejoin="round" fill="none"/></svg><a href="tel:+5900590276139">+590 590 27 61 39</a></div>
+          <div class="lodging-detail"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="7" cy="7" r="5.5" stroke="var(--gold)" stroke-width="1.2"/><ellipse cx="7" cy="7" rx="2.5" ry="5.5" stroke="var(--gold)" stroke-width="1"/><line x1="1.5" y1="7" x2="12.5" y2="7" stroke="var(--gold)" stroke-width="1"/><line x1="2" y1="4.5" x2="12" y2="4.5" stroke="var(--gold)" stroke-width="0.8"/><line x1="2" y1="9.5" x2="12" y2="9.5" stroke="var(--gold)" stroke-width="0.8"/></svg><a href="https://levillagestbarth.com" target="_blank" rel="noopener">levillagestbarth.com</a></div>
+          <div class="lodging-detail"><svg width="12" height="15" viewBox="0 0 12 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 1C3.2 1 1 3.2 1 6c0 4 5 8 5 8s5-4 5-8c0-2.8-2.2-5-5-5z" stroke="var(--gold)" stroke-width="1.2" fill="none"/><circle cx="6" cy="6" r="2" stroke="var(--gold)" stroke-width="1.2" fill="none"/></svg><a href="https://maps.app.goo.gl/Gm2bqwhnar5DRKyB7" target="_blank" rel="noopener">View on map</a></div>
+        </div>
+      </div>
+      <div class="lodging-card" id="lcard3">
+        <button class="lodging-card-header" onclick="toggleLodging(3)">
+          <span class="lodging-card-name">Salines Garden Cottages</span>
+          <svg class="lodging-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 5l4 4 4-4" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="lodging-card-body">
+          <p class="lodging-comment">Small &amp; quaint — only 5 rooms, slightly further out</p>
+          <div class="lodging-detail"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 1.5h5l6 6-5 5-6-6v-5z" stroke="var(--gold)" stroke-width="1.2" fill="none" stroke-linejoin="round"/><circle cx="4.5" cy="4.5" r="1" fill="var(--gold)"/></svg><span class="lodging-price">€200/night</span></div>
+          <div class="lodging-detail"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 1.5h2.8l1.2 3-1.8 1.1a8.3 8.3 0 003.7 3.7L9.5 7.7l3 1.2v2.8a1.2 1.2 0 01-1.3 1.2C4.3 12.4 1 6.8 1.5 2.8c.1-.7.7-1.3 1-1.3z" stroke="var(--gold)" stroke-width="1.2" stroke-linejoin="round" fill="none"/></svg><a href="tel:+590690419429">+590 690 41 94 29</a></div>
+          <div class="lodging-detail"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="7" cy="7" r="5.5" stroke="var(--gold)" stroke-width="1.2"/><ellipse cx="7" cy="7" rx="2.5" ry="5.5" stroke="var(--gold)" stroke-width="1"/><line x1="1.5" y1="7" x2="12.5" y2="7" stroke="var(--gold)" stroke-width="1"/><line x1="2" y1="4.5" x2="12" y2="4.5" stroke="var(--gold)" stroke-width="0.8"/><line x1="2" y1="9.5" x2="12" y2="9.5" stroke="var(--gold)" stroke-width="0.8"/></svg><a href="https://www.salinesgarden.com/en" target="_blank" rel="noopener">salinesgarden.com</a></div>
+          <div class="lodging-detail"><svg width="12" height="15" viewBox="0 0 12 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 1C3.2 1 1 3.2 1 6c0 4 5 8 5 8s5-4 5-8c0-2.8-2.2-5-5-5z" stroke="var(--gold)" stroke-width="1.2" fill="none"/><circle cx="6" cy="6" r="2" stroke="var(--gold)" stroke-width="1.2" fill="none"/></svg><a href="https://maps.app.goo.gl/m7akjkPa5HGbygsR7" target="_blank" rel="noopener">View on map</a></div>
+        </div>
+      </div>
+      <div class="lodging-card" id="lcard4">
+        <button class="lodging-card-header" onclick="toggleLodging(4)">
+          <span class="lodging-card-name">Baie Des Anges</span>
+          <svg class="lodging-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 5l4 4 4-4" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="lodging-card-body">
+          <p class="lodging-comment">Slightly further out</p>
+          <div class="lodging-detail"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 1.5h5l6 6-5 5-6-6v-5z" stroke="var(--gold)" stroke-width="1.2" fill="none" stroke-linejoin="round"/><circle cx="4.5" cy="4.5" r="1" fill="var(--gold)"/></svg><span class="lodging-price">€320/night</span></div>
+          <div class="lodging-detail"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 1.5h2.8l1.2 3-1.8 1.1a8.3 8.3 0 003.7 3.7L9.5 7.7l3 1.2v2.8a1.2 1.2 0 01-1.3 1.2C4.3 12.4 1 6.8 1.5 2.8c.1-.7.7-1.3 1-1.3z" stroke="var(--gold)" stroke-width="1.2" stroke-linejoin="round" fill="none"/></svg><a href="tel:+59590276361">+590 590 27 63 61</a></div>
+          <div class="lodging-detail"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="7" cy="7" r="5.5" stroke="var(--gold)" stroke-width="1.2"/><ellipse cx="7" cy="7" rx="2.5" ry="5.5" stroke="var(--gold)" stroke-width="1"/><line x1="1.5" y1="7" x2="12.5" y2="7" stroke="var(--gold)" stroke-width="1"/><line x1="2" y1="4.5" x2="12" y2="4.5" stroke="var(--gold)" stroke-width="0.8"/><line x1="2" y1="9.5" x2="12" y2="9.5" stroke="var(--gold)" stroke-width="0.8"/></svg><a href="https://www.access.sb/en/st-barts/hotels/charming-hotel/hotel-baie-des-anges/" target="_blank" rel="noopener">access.sb</a></div>
+          <div class="lodging-detail"><svg width="12" height="15" viewBox="0 0 12 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 1C3.2 1 1 3.2 1 6c0 4 5 8 5 8s5-4 5-8c0-2.8-2.2-5-5-5z" stroke="var(--gold)" stroke-width="1.2" fill="none"/><circle cx="6" cy="6" r="2" stroke="var(--gold)" stroke-width="1.2" fill="none"/></svg><a href="https://maps.app.goo.gl/f9bvh5AEMXiAkuqh8" target="_blank" rel="noopener">View on map</a></div>
+        </div>
+      </div>
+      <div class="lodging-card" id="lcard5">
+        <button class="lodging-card-header" onclick="toggleLodging(5)">
+          <span class="lodging-card-name">Le P'tit Morne</span>
+          <svg class="lodging-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 5l4 4 4-4" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="lodging-card-body">
+          <p class="lodging-comment">Apartment &amp; studio rentals further out — great value</p>
+          <div class="lodging-detail"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 1.5h5l6 6-5 5-6-6v-5z" stroke="var(--gold)" stroke-width="1.2" fill="none" stroke-linejoin="round"/><circle cx="4.5" cy="4.5" r="1" fill="var(--gold)"/></svg><span class="lodging-price">€120/night</span></div>
+          <div class="lodging-detail"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 1.5h2.8l1.2 3-1.8 1.1a8.3 8.3 0 003.7 3.7L9.5 7.7l3 1.2v2.8a1.2 1.2 0 01-1.3 1.2C4.3 12.4 1 6.8 1.5 2.8c.1-.7.7-1.3 1-1.3z" stroke="var(--gold)" stroke-width="1.2" stroke-linejoin="round" fill="none"/></svg><a href="tel:+590690866195">+590 690 86 61 95</a></div>
+          <div class="lodging-detail"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="7" cy="7" r="5.5" stroke="var(--gold)" stroke-width="1.2"/><ellipse cx="7" cy="7" rx="2.5" ry="5.5" stroke="var(--gold)" stroke-width="1"/><line x1="1.5" y1="7" x2="12.5" y2="7" stroke="var(--gold)" stroke-width="1"/><line x1="2" y1="4.5" x2="12" y2="4.5" stroke="var(--gold)" stroke-width="0.8"/><line x1="2" y1="9.5" x2="12" y2="9.5" stroke="var(--gold)" stroke-width="0.8"/></svg><a href="https://leptitmorne.com/en/" target="_blank" rel="noopener">leptitmorne.com</a></div>
+          <div class="lodging-detail"><svg width="12" height="15" viewBox="0 0 12 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 1C3.2 1 1 3.2 1 6c0 4 5 8 5 8s5-4 5-8c0-2.8-2.2-5-5-5z" stroke="var(--gold)" stroke-width="1.2" fill="none"/><circle cx="6" cy="6" r="2" stroke="var(--gold)" stroke-width="1.2" fill="none"/></svg><a href="https://maps.app.goo.gl/oo1LnnWgdNC5fSgd9" target="_blank" rel="noopener">View on map</a></div>
+        </div>
+      </div>
+      <div class="lodging-card" id="lcard6">
+        <button class="lodging-card-header" onclick="toggleLodging(6)">
+          <span class="lodging-card-name">Sunset Hotel — Gustavia</span>
+          <svg class="lodging-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 5l4 4 4-4" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="lodging-card-body">
+          <p class="lodging-comment">Pretty basic but in the heart of Gustavia. Ask for harbor view rooms</p>
+          <div class="lodging-detail"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 1.5h5l6 6-5 5-6-6v-5z" stroke="var(--gold)" stroke-width="1.2" fill="none" stroke-linejoin="round"/><circle cx="4.5" cy="4.5" r="1" fill="var(--gold)"/></svg><span class="lodging-price">€130/night</span></div>
+          <div class="lodging-detail"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 1.5h2.8l1.2 3-1.8 1.1a8.3 8.3 0 003.7 3.7L9.5 7.7l3 1.2v2.8a1.2 1.2 0 01-1.3 1.2C4.3 12.4 1 6.8 1.5 2.8c.1-.7.7-1.3 1-1.3z" stroke="var(--gold)" stroke-width="1.2" stroke-linejoin="round" fill="none"/></svg><a href="tel:+590590277721">+590 590 27 77 21</a></div>
+          <div class="lodging-detail"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="7" cy="7" r="5.5" stroke="var(--gold)" stroke-width="1.2"/><ellipse cx="7" cy="7" rx="2.5" ry="5.5" stroke="var(--gold)" stroke-width="1"/><line x1="1.5" y1="7" x2="12.5" y2="7" stroke="var(--gold)" stroke-width="1"/><line x1="2" y1="4.5" x2="12" y2="4.5" stroke="var(--gold)" stroke-width="0.8"/><line x1="2" y1="9.5" x2="12" y2="9.5" stroke="var(--gold)" stroke-width="0.8"/></svg><a href="https://www.sunsethotel-sbh.com" target="_blank" rel="noopener">sunsethotel-sbh.com</a></div>
+          <div class="lodging-detail"><svg width="12" height="15" viewBox="0 0 12 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 1C3.2 1 1 3.2 1 6c0 4 5 8 5 8s5-4 5-8c0-2.8-2.2-5-5-5z" stroke="var(--gold)" stroke-width="1.2" fill="none"/><circle cx="6" cy="6" r="2" stroke="var(--gold)" stroke-width="1.2" fill="none"/></svg><a href="https://maps.app.goo.gl/JD78wpsq6xQxPqjB8" target="_blank" rel="noopener">View on map</a></div>
+        </div>
+      </div>
+      <div class="lodging-card" id="lcard7">
+        <button class="lodging-card-header" onclick="toggleLodging(7)">
+          <span class="lodging-card-name">Auberge de la Petite Anse</span>
+          <svg class="lodging-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 5l4 4 4-4" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="lodging-card-body">
+          <p class="lodging-comment">Further away and secluded — bundles a rental car</p>
+          <div class="lodging-detail"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 1.5h5l6 6-5 5-6-6v-5z" stroke="var(--gold)" stroke-width="1.2" fill="none" stroke-linejoin="round"/><circle cx="4.5" cy="4.5" r="1" fill="var(--gold)"/></svg><span class="lodging-price">€180/night</span></div>
+          <div class="lodging-detail"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="7" cy="7" r="5.5" stroke="var(--gold)" stroke-width="1.2"/><ellipse cx="7" cy="7" rx="2.5" ry="5.5" stroke="var(--gold)" stroke-width="1"/><line x1="1.5" y1="7" x2="12.5" y2="7" stroke="var(--gold)" stroke-width="1"/><line x1="2" y1="4.5" x2="12" y2="4.5" stroke="var(--gold)" stroke-width="0.8"/><line x1="2" y1="9.5" x2="12" y2="9.5" stroke="var(--gold)" stroke-width="0.8"/></svg><a href="https://www.auberge-petite-anse.com/en/home" target="_blank" rel="noopener">auberge-petite-anse.com</a></div>
+          <div class="lodging-detail"><svg width="12" height="15" viewBox="0 0 12 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 1C3.2 1 1 3.2 1 6c0 4 5 8 5 8s5-4 5-8c0-2.8-2.2-5-5-5z" stroke="var(--gold)" stroke-width="1.2" fill="none"/><circle cx="6" cy="6" r="2" stroke="var(--gold)" stroke-width="1.2" fill="none"/></svg><a href="https://maps.app.goo.gl/YPCXwu3oJEbXzawY8" target="_blank" rel="noopener">View on map</a></div>
+        </div>
+      </div>
+      <div class="lodging-card" id="lcard8">
+        <button class="lodging-card-header" onclick="toggleLodging(8)">
+          <span class="lodging-card-name">Domaine de Sweet Hill</span>
+          <svg class="lodging-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 5l4 4 4-4" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="lodging-card-body">
+          <p class="lodging-comment">Looks lovely — higher up on the mountain with views, 4 villas &amp; 2 studios</p>
+          <div class="lodging-detail"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 1.5h5l6 6-5 5-6-6v-5z" stroke="var(--gold)" stroke-width="1.2" fill="none" stroke-linejoin="round"/><circle cx="4.5" cy="4.5" r="1" fill="var(--gold)"/></svg><span class="lodging-price">$343/night</span></div>
+          <div class="lodging-detail"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="7" cy="7" r="5.5" stroke="var(--gold)" stroke-width="1.2"/><ellipse cx="7" cy="7" rx="2.5" ry="5.5" stroke="var(--gold)" stroke-width="1"/><line x1="1.5" y1="7" x2="12.5" y2="7" stroke="var(--gold)" stroke-width="1"/><line x1="2" y1="4.5" x2="12" y2="4.5" stroke="var(--gold)" stroke-width="0.8"/><line x1="2" y1="9.5" x2="12" y2="9.5" stroke="var(--gold)" stroke-width="0.8"/></svg><a href="https://www.booking.com/hotel/bl/sweet-hill-saint-barthelemy.en-us.html?aid=1482198&label=k-rbo_d-m_u-MTc4NzM2NTQ0Mjk3Mjc2MjM4OQ%3D%3D_g-ODc2NDk1MDMuMTc4NzM2NTQyNg%3D%3D_p-LeaveBehindSearch&sid=a9e4920ef045230a3085c7ccff4280f9&checkin=2027-06-25&checkout=2027-07-02" target="_blank" rel="noopener">booking.com</a></div>
+          <div class="lodging-detail"><svg width="12" height="15" viewBox="0 0 12 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 1C3.2 1 1 3.2 1 6c0 4 5 8 5 8s5-4 5-8c0-2.8-2.2-5-5-5z" stroke="var(--gold)" stroke-width="1.2" fill="none"/><circle cx="6" cy="6" r="2" stroke="var(--gold)" stroke-width="1.2" fill="none"/></svg><a href="https://maps.app.goo.gl/AmHf7AxoA4dyhKUNA" target="_blank" rel="noopener">View on map</a></div>
+        </div>
+      </div>
+      <div class="lodging-card" id="lcard9">
+        <button class="lodging-card-header" onclick="toggleLodging(9)">
+          <span class="lodging-card-name">Hotel La Presqu'ile</span>
+          <svg class="lodging-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 5l4 4 4-4" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="lodging-card-body">
+          <p class="lodging-comment">Dirt cheap, French slummin' it with the sailors. Ask for a harbor side room. Phone only — no online booking. Good luck. For you dirty birdies.</p>
+          <div class="lodging-detail"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 1.5h5l6 6-5 5-6-6v-5z" stroke="var(--gold)" stroke-width="1.2" fill="none" stroke-linejoin="round"/><circle cx="4.5" cy="4.5" r="1" fill="var(--gold)"/></svg><span class="lodging-price">Call for rates</span></div>
+          <div class="lodging-detail"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 1.5h2.8l1.2 3-1.8 1.1a8.3 8.3 0 003.7 3.7L9.5 7.7l3 1.2v2.8a1.2 1.2 0 01-1.3 1.2C4.3 12.4 1 6.8 1.5 2.8c.1-.7.7-1.3 1-1.3z" stroke="var(--gold)" stroke-width="1.2" stroke-linejoin="round" fill="none"/></svg><a href="tel:+590590276460">+590 590 27 64 60</a></div>
+          <div class="lodging-detail"><svg width="12" height="15" viewBox="0 0 12 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 1C3.2 1 1 3.2 1 6c0 4 5 8 5 8s5-4 5-8c0-2.8-2.2-5-5-5z" stroke="var(--gold)" stroke-width="1.2" fill="none"/><circle cx="6" cy="6" r="2" stroke="var(--gold)" stroke-width="1.2" fill="none"/></svg><a href="https://share.google/BOxk0GH7BGNMAgrLV" target="_blank" rel="noopener">View on map</a></div>
+        </div>
+      </div>
+  </div>
+  </div>
+</section>
+
+<script>
+  // NEW badge: show on first visit only
+  (function() {
+    var badge = document.getElementById('newBadge');
+    if (badge) {
+      if (localStorage.getItem('lodgingViewed')) {
+        badge.style.display = 'none';
+      } else {
+        localStorage.setItem('lodgingViewed', '1');
+      }
+    }
+  })();
+
+  // Outer toggle
+  function toggleLodgingAll() {
+    var btn  = document.getElementById('lodgingToggle');
+    var body = document.getElementById('lodgingOuterBody');
+    btn.classList.toggle('open');
+    body.classList.toggle('open');
+  }
+
+  // Accordion toggle
+  function toggleLodging(i) {
+    var card = document.getElementById('lcard' + i);
+    card.classList.toggle('open');
+  }
+</script>
+
+<div class="rule"></div>
 
 <!-- Horizon line (signature element) -->
 <div class="horizon-wrap">
@@ -500,15 +867,7 @@
       <div class="cel-num">50</div>
       <div class="cel-text">
         <div class="cel-who">Bobby</div>
-        <div class="cel-what">Where Better to Celebrate 50 Trips Around the Sun?</div>
-      </div>
-    </div>
-
-    <div class="cel-item">
-      <div class="cel-num">50</div>
-      <div class="cel-text">
-        <div class="cel-who">Bill &amp; Connie Cline</div>
-        <div class="cel-what">Fifty golden years of marriage</div>
+        <div class="cel-what">Where better to celebrate 50 trips around the sun?</div>
       </div>
     </div>
 
@@ -647,8 +1006,8 @@
     <div class="step">
       <div class="step-n">1</div>
       <div>
-        <div class="step-t">Fly into SXM</div>
-        <div class="step-d">Fly into SXM, then connect via WinAir or St. Barth Commuter to SBH (Gustaf III). If you prefer to skip the small commuter flight, there are <a href="https://www.stmartinbookings.com/st-barts-ferry" target="_blank" rel="noopener" class="step-link">high speed ferries</a> (40–60 min) with a short airport shuttle from SXM, although some reviews refer to this ferry as the &ldquo;vomit comet&rdquo; due to the rough open seas&hellip;</div>
+        <div class="step-t">Fly into SXM or SJU</div>
+        <div class="step-d">Fly into SXM, then connect via WinAir or St. Barth Commuter to SBH (Gustaf III). If you prefer to skip the small commuter flight, there are <a href="https://www.stmartinbookings.com/st-barts-ferry" target="_blank" rel="noopener" class="step-link">high speed ferries</a> (40–60 min) with a short airport shuttle from SXM, although some reviews refer to this ferry as the &ldquo;vomit comet&rdquo; due to the rough open seas&hellip;<br><br>Alternatively, fly into SJU (San Juan, Puerto Rico) and take a ~1hr <a href="https://www.tradewindaviation.com" target="_blank" rel="noopener" class="step-link">Tradewind Aviation</a> flight directly into SBH.</div>
       </div>
     </div>
 
